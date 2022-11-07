@@ -16,13 +16,13 @@ project:
 documentation: 
   author:       "maehw"      # Your name
   discord:      "maehw"      # Your discord handle
-  title:        ""      # Project title
-  description:  ""      # Short description of what your project does
-  how_it_works: ""      # Longer description of how the project works
-  how_to_test:  ""      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
-  external_hw:  ""      # Describe any external hardware needed
+  title:        "BCD to 7-segment encoder"      # Project title
+  description:  "Encode binary coded decimals (BCD) in the range 0..9 to 7-segment display control signals"      # Short description of what your project does
+  how_it_works: "The design has been fully generated using https://github.com/maehw/wokwi-lookup-table-generator and a lookup table (truth table) to translate a binary coded decimal (BCD) number to wokwi 7-segment display (https://docs.wokwi.com/parts/wokwi-7segment). Valid values are in the range 0..9, other values will show a blank display."      # Longer description of how the project works
+  how_to_test:  "Control the input switches on the PCB and check the digit displayed on the 7-segment display."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "Input switches and 7-segment display (should be on the PCB)"      # Describe any external hardware needed
   language:     "wokwi" # other examples include Verilog, Amaranth, VHDL, etc
-  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  doc_link:     "https://github.com/maehw/wokwi-lookup-table-generator/blob/main/README.md"      # URL to longer form documentation, eg the README.md in your repository
   clock_hz:     0       # Clock frequency in Hz (if required)
   picture:      ""      # relative path to a picture in your repository
   inputs:               # a description of what the inputs do
