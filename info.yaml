@@ -1,41 +1,31 @@
 --- 
 # TinyTapeout project information
 project:
-  wokwi_id:    347688030570545747        # If using wokwi, set this to your project's ID
-#  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
-#    - counter.v
-#    - decoder.v
-#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
-
-# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
-# it does and how to operate it.
-#
-# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
-#
+  wokwi_id:    347688030570545747
 # This info will be automatically collected and used to make a datasheet for the chip.
 documentation: 
-  author:       "maehw"      # Your name
-  discord:      "maehw"      # Your discord handle
-  title:        "BCD to 7-segment encoder"      # Project title
-  description:  "Encode binary coded decimals (BCD) in the range 0..9 to 7-segment display control signals"      # Short description of what your project does
-  how_it_works: "The design has been fully generated using https://github.com/maehw/wokwi-lookup-table-generator and a lookup table (truth table) to translate a binary coded decimal (BCD) number to wokwi 7-segment display (https://docs.wokwi.com/parts/wokwi-7segment). Valid values are in the range 0..9, other values will show a blank display."      # Longer description of how the project works
+  author:       "maehw"
+  discord:      "maehw"
+  title:        "BCD to 7-segment encoder"
+  description:  "Encode binary coded decimals (BCD) in the range 0..9 to 7-segment display control signals"
+  how_it_works: "The design has been fully generated using https://github.com/maehw/wokwi-lookup-table-generator using a truth table (https://github.com/maehw/wokwi-lookup-table-generator/blob/main/demos/bcd_7segment_lut.logic.json). The truth table describes the translation of binary coded decimal (BCD) numbers to wokwi 7-segment display (https://docs.wokwi.com/parts/wokwi-7segment). Valid BCD input values are in the range 0..9, other values will show a blank display."
   how_to_test:  "Control the input switches on the PCB and check the digit displayed on the 7-segment display."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
-  external_hw:  "Input switches and 7-segment display (should be on the PCB)"      # Describe any external hardware needed
-  language:     "wokwi" # other examples include Verilog, Amaranth, VHDL, etc
-  doc_link:     "https://github.com/maehw/wokwi-lookup-table-generator/blob/main/README.md"      # URL to longer form documentation, eg the README.md in your repository
-  clock_hz:     0       # Clock frequency in Hz (if required)
-  picture:      ""      # relative path to a picture in your repository
-  inputs:               # a description of what the inputs do
-    - clock
-    - reset
-    - none
-    - none
+  external_hw:  "Input switches and 7-segment display (should be on the PCB)"
+  language:     "wokwi"
+  doc_link:     "https://github.com/maehw/wokwi-lookup-table-generator/blob/main/README.md" # URL to longer form documentation, eg the README.md in your repository; may be updated to description on tinytapeout.com
+  clock_hz:     0       # purely combinatorial logic!
+  picture:      ""
+  inputs:
+    - w # most significant bit of BCD input number
+    - x
+    - y
+    - z # least significant bit of BCD input number
     - none
     - none
     - none
     - none
   outputs:
-    - segment a         # a description of what the outputs do
+    - segment a
     - segment b
     - segment c
     - segment d
